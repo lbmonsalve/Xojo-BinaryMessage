@@ -28,13 +28,12 @@ message People {
 
 Run the compiler (bmsgc.exe in windows or use Parser class) with the file name as parameter to create the .rbbas 
 (or .xojo_code) files, add BinaryMessage module with their classes, add the files created with the compiler into a 
-project. Now you can use "WriteTo(...)" method of created classes to serialize it into memoryBlock/binaryStream 
-object, then you can send or store the bytes of memoryBlock/binaryStream to anywhere, when you need the data, 
-load into memoryBlock/binaryStream object, create the object with the class created with compiler, use 
-"ReadFrom(...)" to load bytes into instance of the object.
+project. Now you can use "WriteTo(...)" method serialize class it into memoryBlock/binaryStream object, then you 
+can send or store the bytes of memoryBlock/binaryStream to anywhere, when you need the data, load into 
+memoryBlock/binaryStream object, create the object with the class created with compiler, use "ReadFrom(...)" to 
+load bytes into instance of the object.
 
-If you have already the class(es) just add "BinaryMessageTag" and/or "BinaryMessageTextEncoding" attrib to properties,
-set Super to BinaryMessage.Message.
+If you have already the class(es) just add "BinaryMessageTag" and/or "BinaryMessageTextEncoding" attrib to properties.
 
 ## Message definition
 
@@ -100,6 +99,8 @@ When the type are 11 the bytes of length has the next bytes for store the string
 | key | string length | string |
 +-----+---------------+--------+
 ```
+
+When the type are 12 the next UInt8 has a first bit enable when object is not null.  
 
 When the type are 13 the bytes of length has the size of dictionary (1 based).
 ```
@@ -180,7 +181,7 @@ When the type are 15 the bytes of length has the size of the array (1 based).
 
 ## Benchmark
 
-win7 VM, realstudio2011r4.3 debug:
+win7 VM, realstudio2011r4.3 debug:  
   De-serialize JSON : 1.15043ms  
   Serialize to JSON : 0.17712ms  
   Serialize to BinaryMessage : 0.459ms  
