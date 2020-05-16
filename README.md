@@ -101,8 +101,6 @@ When the type are 11 the bytes of length has the next bytes for store the string
 +-----+---------------+--------+
 ```
 
-When the type are 12 the next UInt8 has a first bit enable when object is not null.  
-
 When the type are 13 the bytes of length has the size of dictionary (1 based).
 ```
 +-----+-----------------+=====================+
