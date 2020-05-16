@@ -83,7 +83,8 @@ The type of field could be:
 1 = Int16, UInt16  
 2 = Int32, UInt32  
 3 = Int64, UInt64  
-4, 5, 6, 7 = Not used  
+4 = In32 Enum  
+5, 6, 7 = Not used  
 8 = Float  
 9 = Double  
 10 = Bool  
