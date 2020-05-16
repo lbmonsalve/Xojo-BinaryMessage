@@ -28,10 +28,10 @@ message People {
 
 Run the compiler (bmsgc.exe in windows or use Parser class) with the file name as parameter to create the .rbbas 
 (or .xojo_code) files, add BinaryMessage module with their classes, add the files created with the compiler into a 
-project. Now you can use "WriteTo(...)" method serialize class it into memoryBlock/binaryStream object, then you 
+project. Now you can use "WriteTo(...)" method of serialize class into memoryBlock/binaryStream object, then you 
 can send or store the bytes of memoryBlock/binaryStream to anywhere, when you need the data, load into 
 memoryBlock/binaryStream object, create the object with the class created with compiler, use "ReadFrom(...)" to 
-load bytes into instance of the object.
+load bytes into instance of the object..
 
 If you have already the class(es) just add "BinaryMessageTag" and/or "BinaryMessageTextEncoding" attrib to properties.
 
